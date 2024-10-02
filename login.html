@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#005666',
+                        secondary: '#FF765B',
+                        info: '#88C1BA',
+                        disableBg: '#E5E7E7',
+                        customgray: '#FBFBFB',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <title>Pocket Ally</title>
+</head>
+
+<body>
+    <section class="flex flex-col gap-8 bg-customgray h-screen  md:p-12  lg:flex-row lg:px-16 lg:py-12"
+        x-data="{ openTab: 'decode' }">
+        <div class="flex flex-col justify-between bg-white rounded-2xl shadow-[0px_50px_60px_-20px_#223A2833] w-full h-full  md:flex-row">
+            <div class="bg-[#C9E2DC] w-full h-full p-14  md:w-6/12 md:bg-white md:rounded-tl-2xl md:rounded-bl-2xl  lg:w-5/12">
+                <div class="container mx-auto max-w-md">
+                    <img src="./logo.svg" alt="">
+                    <p class=" text-[#035A53] mb-6">Empower - Unmask - Thrive</p>
+                  
+                    <form class="space-y-4">
+                    
+                      <div class="w-full max-w-sm">
+                        <!-- Email Input -->
+                        <input type="email" placeholder="Enter your email"
+                          class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                        />
+                      </div>
+                      
+                      <div>
+                        <label class="block text-gray-700 mb-2">Password</label>
+                        <div x-data="{ show: false }" class="relative w-full max-w-sm">
+                            <!-- Password Input -->
+                            <input :type="show ? 'text' : 'password'" placeholder="●●●●●●●●"
+                              class="w-full
+                              px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                            />
+                          
+                            <!-- Eye Icon -->
+                            <span @click="show = !show" class="absolute right-3 top-2 text-orange-500 cursor-pointer">
+                              <!-- Eye Icon (shown when the password is hidden) -->
+                              <svg x-show="!show" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M10 3C5 3 1.73 7.11 1.05 10.1a1.16 1.16 0 000 .8C1.73 12.89 5 17 10 17s8.27-4.11 8.95-7.1a1.16 1.16 0 000-.8C18.27 7.11 15 3 10 3zm0 12c-2.76 0-5-3.15-5.95-5.5C5 8.15 7.24 5 10 5s5 3.15 5.95 5.5C15 11.85 12.76 15 10 15z" />
+                                <path d="M10 7a3 3 0 100 6 3 3 0 000-6z" />
+                              </svg>
+                          
+                              <!-- Eye Slash Icon (shown when the password is visible) -->
+                              <svg x-show="show" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M13.875 12.812l3.02 3.02a.75.75 0 01-1.06 1.06l-3.062-3.063a6.757 6.757 0 01-2.773.622 6.75 6.75 0 01-6.557-5.063 6.714 6.714 0 011.624-6.35l-2.71-2.71a.75.75 0 111.06-1.06l14.25 14.25a.75.75 0 01-1.06 1.06l-2.742-2.741zm-.812-.812l-1.69-1.69c-.562.086-1.136.064-1.692-.108A2.967 2.967 0 019.625 10.5a2.993 2.993 0 01-.515-.077L7.125 8.438a4.373 4.373 0 001.305 4.059c.737.72 1.658 1.124 2.64 1.138a5.253 5.253 0 001.993-.373zm-5.743-5.74l-1.552-1.552a4.372 4.372 0 00-1.306 3.962c.674 3.12 3.663 5.16 6.806 4.812.96-.103 1.887-.468 2.689-1.033l-1.538-1.538a2.984 2.984 0 01-1.86.656 2.992 2.992 0 01-2.93-3.31l-1.31-1.31z"/>
+                              </svg>
+                            </span>
+                          </div>
+                      </div>
+                  
+                      <div class=" flex justify-center">
+                        <a href="#" class="text-[#FF765B] hover:underline">Forgot password?</a>
+                      </div>
+                  
+                      <div class="flex justify-center gap-3">
+            
+                        <button class="w-full px-4 py-2 bg-[#fff] rounded-[100px] border border-[#FF765B] hover:bg-[#FF765B]" type="submit">SIGN UP</button>
+                        <button class="w-full px-4 py-2 bg-[#fff] rounded-[100px] border border-[#FF765B] hover:bg-[#FF765B]" type="submit">LOGIN</button>
+                      </div>
+                      <div class="flex items-center my-6">
+                        <hr class="flex-grow border-t border-gray-300">
+                        <span class="mx-4 text-gray-500">or</span>
+                        <hr class="flex-grow border-t border-gray-300">
+                      </div>
+                      
+                      <div class="mb-4">
+                        <button
+                          type="button"
+                          class="w-full py-2 bg-white border border-gray-300 text-gray-600 rounded-lg flex items-center justify-center shadow-sm transition duration-200 hover:bg-[#FF765B] hover:text-white">
+                          <img class="h-5 w-5 mr-2" src="./Logo-google-icon-PNG.png" alt="">
+                          Sign in with Google
+                        </button>
+                      </div>
+                    </form>
+                  
+                    <p class="text-center text-gray-500 mt-4">By signing up, you agree to our <SPAn class="text-[#FF765B]">Terms.</SPAn> See how we use your data in our <span class="text-[#FF765B]">Privacy Policy.</span> </p>
+                  </div>
+            </div>
+            <div class="hidden w-full  md:w-6/12 md:block  lg:w-7/12">
+                <img class="w-full h-full object-cover rounded-tr-2xl rounded-br-2xl" src="./Illustration.jpg" alt="bg">
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

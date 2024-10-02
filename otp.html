@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#005666',
+                        secondary: '#FF765B',
+                        info: '#88C1BA',
+                        disableBg: '#E5E7E7',
+                        customgray: '#FBFBFB',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <title>Pocket Ally</title>
+</head>
+
+<body>
+    <section class="flex flex-col gap-8 bg-customgray h-screen  md:p-12  lg:flex-row lg:px-16 lg:py-12"
+        x-data="{ openTab: 'decode' }">
+        <div class="flex flex-col justify-between bg-white rounded-2xl shadow-[0px_50px_60px_-20px_#223A2833] w-full h-full  md:flex-row">
+            <div class="bg-[#C9E2DC] w-full h-full p-14  md:w-6/12 md:bg-white md:rounded-tl-2xl md:rounded-bl-2xl  lg:w-5/12">
+                <div class="container mx-auto max-w-md">
+                    <img src="./logo.svg" alt="">
+                    <p class=" text-[#035A53] mb-6">Empower - Unmask - Thrive</p>
+                  
+                    <form class="space-y-4">
+                      <div class="w-full max-w-sm">
+                        <!-- Email Input -->
+                         <div class="flex flex-col justify-center justify-between items-center">
+                            <p class="text-[#005666] text-1xl font-semibold font-['Proxima Nova'] leading-[30px]">We’ve sent a verification<br/>code on this email address</p>
+                             <p class=" justify-center text-[#005666] text-2xl font-semibold font-['Proxima Nova'] leading-[30px]">test@gmail.com</p>
+                         </div>
+                             
+                            
+                         <div class="flex space-x-2 justify-center">
+                            <!-- OTP Input -->
+                            <input type="text" maxlength="1" class="w-12 text-center text-lg border-b-2 border-gray-300 focus:outline-none focus:border-teal-500" />
+                            
+                            <input type="text" maxlength="1" class="w-12 text-center text-lg border-b-2 border-gray-300 focus:outline-none focus:border-teal-500" />
+                            
+                            <input type="text" maxlength="1" class="w-12 text-center text-lg border-b-2 border-gray-300 focus:outline-none focus:border-teal-500" />
+                            
+                            <input type="text" maxlength="1" class="w-12 text-center text-lg border-b-2 border-gray-300 focus:outline-none focus:border-teal-500" />
+                          </div>
+                          
+                      </div>
+                     
+                    </form>
+                   
+                  </div>
+                  <div class="text-center text-[#3277df] mt-36 text-sm font-medium font-['Proxima Nova'] leading-tight">I didn’t receive the code. Please<br/>send it again</div>
+
+                  <div class="flex justify-center mt-4">
+                    <button class=" w-5/6 max-w-sm px-4 py-2 border border-[#ff765b]  justify-center absolute bg-[#fff] rounded-[100px] shadow hover:bg-[#ff765b] hover:text-[#fff] ">
+                        SEND
+                    </button>
+                  </div>
+                 
+
+            </div>
+            <div class="hidden w-full  md:w-6/12 md:block  lg:w-7/12">
+                <img class="w-full h-full object-cover rounded-tr-2xl rounded-br-2xl" src="./Illustration (1).jpg" alt="bg">
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
